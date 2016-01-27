@@ -2,8 +2,7 @@ import csv
 import smtplib
 from email.mime.text import MIMEText
 import re
-from mail import *
-from contants import *
+from includes.mail import *
 
 def massmail():
     with open('/home/antariksh/Desktop/message.csv', 'r') as file:
