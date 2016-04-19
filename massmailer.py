@@ -24,4 +24,7 @@ def massmail():
 if __name__ == '__main__':
     body, send_to = massmail()
     attachment =[] #['server path of the file1','server path of the file2']
-    send_mail(send_from,send_to,'test',body,attachment,"smtp.gmail.com",587,username,password,'True')
+    for each in send_to:
+        list_send_to = []
+        list_send_to.append(each)
+        send_mail(send_from,list,'test',body,attachment,"smtp.gmail.com",587,username,password,'True')
