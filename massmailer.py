@@ -12,19 +12,17 @@ def massmail():
         if len(data[-1]) <1:
             data = data[:-1]
     
-    f = open( "/home/antariksh/Desktop/message.csv", "r" )
-    body = []
-    for line in f:
-        body.append(line)
+    f = open( "/home/antariksh/Desktop/bill.html", "r" )
+    body = f.read()
     f.close()
-    body = ''.join(body)
     
     return body, data
 
 if __name__ == '__main__':
     body, send_to = massmail()
-    attachment =[] #['server path of the file1','server path of the file2']
+    attachment =[]  #['server path of the file1','server path of the file2']
+    mailType = 'html'
     for each in send_to:
-        list_send_to = []
+        list_send_to =  []
         list_send_to.append(each)
-        send_mail(send_from,list,'test',body,attachment,"smtp.gmail.com",587,username,password,'True')
+        send_mail(send_from,list_send_to,'test',body,attachment,"smtp.gmail.com",587,username,password,'True', mailType)

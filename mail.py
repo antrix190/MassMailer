@@ -6,13 +6,13 @@ from email.utils import COMMASPACE, formatdate
 from email import encoders
 from contants import *
 
-def send_mail( send_from, send_to, subject, text, files, server, port, username, password, isTls):
+def send_mail( send_from, send_to, subject, text, files, server, port, username, password, isTls, mailType):
     msg = MIMEMultipart()
     msg['From'] = send_from
     msg['To'] =  ",".join(send_to)
     msg['Subject'] = subject
 
-    msg.attach(MIMEText(text))
+    msg.attach(MIMEText(text, mailType))
     for f in files:
         part = MIMEBase('application', "octet-stream")
         part.set_payload( open(f,"rb").read() )
