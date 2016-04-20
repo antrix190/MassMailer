@@ -6,13 +6,13 @@ from mail import *
 from contants import *
 
 def massmail():
-    with open('/path/to/csv/file', 'r') as file:
+    with open(mailCSV, 'r') as file:
         data=file.read()
         data = re.split("[,\n]+", data)
         if len(data[-1]) <1:
             data = data[:-1]
     
-    f = open( "/path/to/html/content/file", "r" )
+    f = open(mailHTML, "r" )
     body = f.read()
     f.close()
     
