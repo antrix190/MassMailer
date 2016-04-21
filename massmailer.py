@@ -31,4 +31,4 @@ if __name__ == '__main__':
 
         list_send_to =  []
         list_send_to.append(each)
-        send_mail(send_from,list_send_to,subject,temp_body,attachment,"smtp.gmail.com",587,username,password,'True', mailType)
+        send_mail(send_from,list_send_to,subject,temp_body,attachment,serverHost,port,username,password,isTls, mailType)
